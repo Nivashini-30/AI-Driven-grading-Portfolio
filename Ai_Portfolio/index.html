@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI-driven Grading & Feedback System — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-bg"></div>
+
+  <header class="site-header glass">
+    <div class="brand">
+      <div class="logo">AI<span>Grader</span></div>
+      <div class="tag">Grading • Feedback • Explainability</div>
+    </div>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#demo">Demo</a>
+      <a href="#features">Features</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-card glass">
+      <h1>AI-driven Grading & Feedback System</h1>
+      <p class="lead">
+        A transparent, explainable system that automatically evaluates student responses and returns actionable feedback — showcased here inside my portfolio.
+      </p>
+      <div class="hero-cta">
+        <a href="#demo" class="btn primary">Try the Live Demo</a>
+        <a href="#about" class="btn ghost">About the Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="section-inner glass">
+      <h2>About the Project</h2>
+      <p>
+        This project uses Natural Language Processing techniques to compare student answers against expectations,
+        measure structure and coherence, estimate grammar quality, and produce an overall score plus actionable insights.
+        The portfolio showcases both the concept and a working demo (mock AI) so reviewers can interact with the system.
+      </p>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="section alt">
+    <div class="section-inner">
+      <h2>Core Features</h2>
+      <div class="features-grid">
+        <div class="feature glass">
+          <h3>Automated Grading</h3>
+          <p>Scores essays/answers using explainable heuristics and model output (or swap in a real LLM).</p>
+        </div>
+        <div class="feature glass">
+          <h3>Actionable Feedback</h3>
+          <p>Provides targeted recommendations so students know how to improve next time.</p>
+        </div>
+        <div class="feature glass">
+          <h3>Teacher Controls</h3>
+          <p>Customizable rubrics, regrade options, and exportable feedback for records.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMO -->
+  <section id="demo" class="section">
+    <div class="section-inner demo-grid">
+      <div class="panel glass demo-left">
+        <h2>Live Demo — Paste a student answer</h2>
+        <p class="muted">Paste an essay, short answer or code comment — then click <b>Run AI Grade</b>.</p>
+
+        <div class="form-row">
+          <label>Assignment title (optional)</label>
+          <input id="title" type="text" placeholder="e.g., Photosynthesis - Short Answer" />
+        </div>
+
+        <div class="form-row">
+          <label>Student submission</label>
+          <textarea id="submission" rows="8" placeholder="Paste student answer here..."></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button id="runBtn" class="btn primary">Run AI Grade</button>
+          <button id="clearBtn" class="btn ghost">Clear</button>
+        </div>
+
+        <div id="notes" class="notes muted">This demo uses a deterministic mock grader for reproducible results. Replace with your model endpoint when ready.</div>
+      </div>
+
+      <div class="panel glass demo-right" id="resultPanel">
+        <div id="emptyState" class="empty">
+          <h3>No graded submission yet</h3>
+          <p class="muted">Paste a student answer and press <b>Run AI Grade</b> — results appear here.</p>
+        </div>
+
+        <div id="resultView" class="result hidden">
+          <div class="result-header">
+            <div>
+              <h3 id="resTitle">Untitled Submission</h3>
+              <div class="muted" id="resSubtitle">AI-driven feedback — explainable and editable.</div>
+            </div>
+            <div class="scoreWrap">
+              <div id="resScore" class="score">0%</div>
+              <div class="muted small">Overall score</div>
+            </div>
+          </div>
+
+          <div class="rubricGrid" id="rubricList"></div>
+
+          <div class="insights">
+            <h4>Actionable Insights</h4>
+            <ul id="insightsList"></ul>
+          </div>
+
+          <div class="result-actions">
+            <button id="regradeBtn" class="btn ghost">Regrade (with same logic)</button>
+            <button id="copyBtn" class="btn primary">Copy Feedback</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section alt">
+    <div class="section-inner glass">
+      <h2>Contact</h2>
+      <p class="muted">Want the code, collaboration, or full project repo? Reach out.</p>
+      <div class="contact-links">
+        <a class="link" href="mailto:yourname@example.com">yourname@example.com</a>
+        <a class="link" href="#" onclick="event.preventDefault()">GitHub / Repo (link)</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer glass">
+    <div>© 2025 Your Name — AI-driven Grading & Feedback System</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
